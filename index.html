@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CCA 10th Grade 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=DM+Serif+Display:ital@0;1&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f7f5f0;
+    --bg2: #eeeae2;
+    --ink: #1a1814;
+    --ink2: #4a4640;
+    --navy: #0b0f2e;
+    --sky: #2563eb;
+    --gold: #d97706;
+    --mint: #059669;
+    --coral: #dc2626;
+    --border: rgba(26,24,20,.1);
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+  }
+
+  /* ── Navbar ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--navy);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px; height: 60px;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+  .nav-brand {
+    font-family: 'Space Mono', monospace;
+    font-size: 13px; letter-spacing: 2px;
+    color: rgba(255,255,255,.9); text-decoration: none;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .nav-brand .dot { width: 8px; height: 8px; border-radius: 50%; background: #38bdf8; }
+  .nav-links { display: flex; align-items: center; gap: 4px; }
+  .nav-links a {
+    color: rgba(255,255,255,.6); text-decoration: none;
+    font-size: 13px; font-weight: 500;
+    padding: 6px 14px; border-radius: 6px;
+    transition: color .2s, background .2s;
+  }
+  .nav-links a:hover { color: #fff; background: rgba(255,255,255,.08); }
+  .nav-links a.active { color: #38bdf8; }
+
+  /* ── Hero ── */
+  .hero {
+    background: var(--navy);
+    padding: 80px 48px 72px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(56,189,248,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(56,189,248,.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .hero-inner { position: relative; max-width: 900px; margin: 0 auto; }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 5px 14px; border-radius: 999px;
+    font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; margin-bottom: 20px;
+    color: #38bdf8; border: 1px solid rgba(56,189,248,.3);
+    background: rgba(56,189,248,.08);
+    font-family: 'Space Mono', monospace;
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(40px, 6vw, 80px);
+    color: #fff; line-height: 1.05;
+    margin-bottom: 16px;
+  }
+  .hero h1 em { color: #38bdf8; font-style: italic; }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,.5);
+    max-width: 480px; line-height: 1.7;
+  }
+
+  /* ── Main content ── */
+  main { max-width: 960px; margin: 0 auto; padding: 56px 48px 80px; }
+
+  .section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--ink2); opacity: .5; margin-bottom: 20px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::after {
+    content: ''; flex: 1; height: 1px; background: var(--border);
+  }
+
+  /* ── Card grid ── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    text-decoration: none;
+    color: var(--ink);
+    display: flex; flex-direction: column; gap: 12px;
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    position: relative; overflow: hidden;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,.1);
+    border-color: rgba(26,24,20,.2);
+  }
+  .card-icon {
+    width: 48px; height: 48px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+  }
+  .card h3 { font-size: 17px; font-weight: 700; line-height: 1.3; }
+  .card p  { font-size: 13px; color: var(--ink2); line-height: 1.6; flex: 1; }
+  .card .card-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 4px;
+  }
+  .card .badge {
+    font-size: 11px; font-weight: 600; letter-spacing: 1px;
+    padding: 3px 10px; border-radius: 999px;
+    text-transform: uppercase;
+  }
+  .card .arrow {
+    width: 28px; height: 28px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; background: var(--bg2);
+    transition: background .2s, transform .2s;
+  }
+  .card:hover .arrow { background: var(--navy); color: #fff; transform: translateX(2px); }
+
+  /* card accent colors */
+  .card.sky  { border-top: 3px solid #2563eb; }
+  .card.gold { border-top: 3px solid #d97706; }
+  .card.mint { border-top: 3px solid #059669; }
+  .card.coral{ border-top: 3px solid #dc2626; }
+  .card.sky  .card-icon { background: rgba(37,99,235,.1); }
+  .card.gold .card-icon { background: rgba(217,119,6,.1); }
+  .card.mint .card-icon { background: rgba(5,150,105,.1); }
+  .card.coral .card-icon { background: rgba(220,38,38,.1); }
+  .card.sky  .badge { color: #2563eb; background: rgba(37,99,235,.08); }
+  .card.gold .badge { color: #d97706; background: rgba(217,119,6,.08); }
+  .card.mint .badge { color: #059669; background: rgba(5,150,105,.08); }
+  .card.coral .badge { color: #dc2626; background: rgba(220,38,38,.08); }
+
+  /* ── Coming soon card ── */
+  .card.soon {
+    opacity: .5; pointer-events: none;
+    border-style: dashed;
+  }
+  .card.soon .arrow { display: none; }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 24px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  footer p { font-size: 12px; color: var(--ink2); opacity: .5; font-family: 'Space Mono', monospace; }
+
+  @media (max-width: 600px) {
+    nav { padding: 0 20px; }
+    .hero { padding: 48px 20px; }
+    main { padding: 40px 20px 60px; }
+    footer { padding: 20px; flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── Navbar ── -->
+<nav>
+  <a class="nav-brand" href="#">
+    <span class="dot"></span>
+    CCA · 2026
+  </a>
+  <div class="nav-links">
+    <a href="#" class="active">10th Grade</a>
+    <a href="#materials">Materials</a>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">✦ Central Christian Academy</div>
+    <h1>10th Grade<br><em>2026</em></h1>
+    <p>학습 자료, 일정, 행사 안내 등 10학년에 필요한 모든 정보를 한곳에서 확인하세요.</p>
+  </div>
+</header>
+
+<!-- ── Main ── -->
+<main id="materials">
+  <p class="section-label">학습 자료 및 안내</p>
+
+  <div class="card-grid">
+
+    <!-- OT -->
+    <a class="card sky" href="ot/index.html">
+      <div class="card-icon">📋</div>
+      <h3>신입생 오리엔테이션</h3>
+      <p>2026학년도 1학기 OT 자료 — 일과, 가치, 행사, 방과후 안내</p>
+      <div class="card-footer">
+        <span class="badge">1학기</span>
+        <span class="arrow">→</span>
+      </div>
+    </a>
+
+    <!-- Placeholder cards -->
+    <div class="card gold soon">
+      <div class="card-icon">📅</div>
+      <h3>학사 일정</h3>
+      <p>주요 행사 및 시험 일정 안내</p>
+      <div class="card-footer">
+        <span class="badge">준비 중</span>
+      </div>
+    </div>
+
+    <div class="card mint soon">
+      <div class="card-icon">📖</div>
+      <h3>IB TIME</h3>
+      <p>DP 준비를 위한 IB 학습 자료</p>
+      <div class="card-footer">
+        <span class="badge">준비 중</span>
+      </div>
+    </div>
+
+    <div class="card coral soon">
+      <div class="card-icon">🌊</div>
+      <h3>부산 체험학습</h3>
+      <p>2박 3일 부산 체험학습 안내 및 자료</p>
+      <div class="card-footer">
+        <span class="badge">준비 중</span>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <p>CCA · 10th Grade · 2026</p>
+  <p>Central Christian Academy</p>
+</footer>
+
+</body>
+</html>
