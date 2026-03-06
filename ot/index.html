@@ -263,7 +263,7 @@
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
     <div class="orb orb-3"></div>
-    <span class="slide-num">00 / 06</span>
+    <span class="slide-num">01 / 07</span>
     <p class="subtitle">CENTRAL CHRISTIAN ACADEMY</p>
     <h1>10학년<br><span class="accent-sky">신입생 OT</span></h1>
     <p class="desc">2026학년도 1학기 · 10학년 오리엔테이션</p>
@@ -271,7 +271,7 @@
 
   <!-- ═══ SLIDE 1: 가치 ═══ -->
   <section class="slide" id="slide-1">
-    <span class="slide-num">01 / 06</span>
+    <span class="slide-num">02 / 07</span>
     <div class="tag tag-sky">📌 우리의 가치</div>
     <h2>함께 만들어가는 <span class="accent-sky">10학년</span></h2>
     <div class="value-grid">
@@ -295,7 +295,7 @@
 
   <!-- ═══ SLIDE 2: 기초학력 방과후 ═══ -->
   <section class="slide" id="slide-2">
-    <span class="slide-num">02 / 06</span>
+    <span class="slide-num">03 / 07</span>
     <div class="tag tag-coral">📚 기초학력 방과후</div>
     <h2>기초학력 <span class="accent-coral">방과후 안내</span></h2>
     <p style="margin-bottom:16px; text-align:center; font-size:14px; color:var(--gray)">최소 성취수준 보장 지도 (최성보) · 7·8교시 운영</p>
@@ -323,7 +323,7 @@
 
   <!-- ═══ SLIDE 3: 스학공 ═══ -->
   <section class="slide" id="slide-3">
-    <span class="slide-num">03 / 06</span>
+    <span class="slide-num">04 / 07</span>
     <div class="tag tag-gold">📅 자습 안내</div>
     <h2><span class="accent-gold">스스로 학습 공동체</span> 운영</h2>
     <div class="info-grid">
@@ -355,7 +355,7 @@
 
   <!-- ═══ SLIDE 4: 1학기 활동 ═══ -->
   <section class="slide" id="slide-4">
-    <span class="slide-num">04 / 06</span>
+    <span class="slide-num">05 / 07</span>
     <div class="tag tag-mint">🎉 1학기 활동</div>
     <h2>10학년 <span class="accent-mint">1학기 활동</span></h2>
     <div class="event-list">
@@ -390,13 +390,31 @@
     </div>
   </section>
 
-  
-
   <!-- ═══ SLIDE 5: CLOSING ═══ -->
+<section class="slide" id="slide-close">
+  <div class="orb orb-1" style="opacity:.1"></div>
+  <div class="orb orb-2" style="opacity:.1"></div>
+  <span class="slide-num">06 / 07</span>
+  <div class="tag tag-sky">📢 안내</div>
+  <h1>14:40 신청 안내</h1>
+
+  <p style="margin-top:20px">
+    <strong>반 / 교실</strong><br>
+    10-1 : 304<br>
+    10-2 : 302<br>
+    10-3 : 307
+  </p>
+
+  <p style="margin-top:20px">
+    💻 <strong>크롬북으로 신청</strong>
+  </p>
+</section>
+
+  <!-- ═══ SLIDE 6: CLOSING ═══ -->
   <section class="slide" id="slide-close">
     <div class="orb orb-1" style="opacity:.1"></div>
     <div class="orb orb-2" style="opacity:.1"></div>
-    <span class="slide-num">06 / 06</span>
+    <span class="slide-num">07 / 07</span>
     <div class="tag tag-sky">🙏 마무리</div>
     <h1>함께라서<br><span class="accent-gold">더 빛나는</span><br>10학년 🌟</h1>
     <p style="margin-top:20px">궁금한 점은 언제든지 선생님께 질문하세요!</p>
@@ -408,7 +426,7 @@
 <div id="nav">
   <button id="btn-prev" disabled>&#8592;</button>
   <div class="dot-row" id="dots"></div>
-  <span id="progress-text">1 / 6</span>
+  <span id="progress-text">1 / 7</span>
   <button id="btn-next">&#8594;</button>
 </div>
 <p id="hint">← → 키 또는 버튼으로 이동</p>
@@ -437,7 +455,7 @@
     dotsEl.children[cur].classList.add('on');
     prevBtn.disabled = cur === 0;
     nextBtn.disabled = cur === slides.length - 1;
-    progressTxt.textContent = (cur + 1) + ' / 6';
+    progressTxt.textContent = (cur + 1) + ' / 7';
   }
 
   prevBtn.addEventListener('click', () => { if (cur > 0) goTo(cur - 1); });
